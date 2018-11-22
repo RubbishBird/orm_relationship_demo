@@ -11,3 +11,7 @@ class Article(models.Model):
     category = models.ForeignKey('Category',on_delete=models.CASCADE)
     username = models.ForeignKey('frontuser.FrontUser',on_delete=models.CASCADE,null=True)
 
+
+class Comment(models.Model):
+    content = models.TextField()
+    origin_comment = models.ForeignKey('self',on_delete=models.CASCADE)
