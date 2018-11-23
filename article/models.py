@@ -11,6 +11,10 @@ class Article(models.Model):
     category = models.ForeignKey('Category',on_delete=models.CASCADE)
     username = models.ForeignKey('frontuser.FrontUser',on_delete=models.CASCADE,null=True)
 
+    # 更改表名
+    # class Meta:
+    #     db_table='article'
+
 
 class Comment(models.Model):
     content = models.TextField()
